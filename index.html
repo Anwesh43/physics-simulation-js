@@ -8,14 +8,14 @@
     <script>
         const canvas = document.getElementById('canv')
         const context = canvas.getContext('2d')
-        const body = new PhysicsBody(500,500,50,'#C2185B')
-        body.applyVelocity(-20)
-        body.applyForce(1)
+        const body = new PhysicsBody(500,500,10,'#C2185B')
+        body.applyVelocity(new Vector(0,-8))
+        body.applyForce(new Vector(0,0.1))
         setInterval(()=> {
             context.fillStyle = '#212121'
             context.fillRect(0,0,canvas.width,canvas.height)
             body.draw(context)
             body.update()
-        })
+        },10)
     </script>
 </body>
