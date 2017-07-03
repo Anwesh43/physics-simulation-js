@@ -1,7 +1,8 @@
-class Ball {
-    constructor(centerx,centery,radius) {
+class PhysicsBody {
+    constructor(centerx,centery,radius,color) {
         this.position = new Vector(centerx,cenetery)
         this.radius = radius
+        this.color = color
     }
     applyVelocity(velvec) {
         this.vel = velvec
@@ -9,8 +10,8 @@ class Ball {
     applyForce(force) {
         this.acc = force/1
     }
-    draw() {
-        context.fillStyle = '#C2185B'
+    draw(context) {
+        context.fillStyle = this.color
         context.save()
         context.translate(this.position.x,this.position.y)
         context.beginPath()
